@@ -38,12 +38,41 @@ exports.techMixin = {
     getCompiledResult : function(sources) {
         sources = sources.join('\n');
 
-        var BEMHTML = require('../lib/bemhtml');
-        return BEMHTML.translate(sources, {
-                devMode : process.env.BEMHTML_ENV == 'development',
-                cache   : process.env.BEMHTML_CACHE == 'on',
-                exportName : 'BEMHTML'
+        var BEMHTML = require('bem-xjst/lib/bemhtml'),
+            exportName = this.getExportName(),
+            xjstJS = BEMHTML.generate(sources, {
+                optimize: process.env[exportName + '_ENV'] == 'development',
+                cache   : process.env[exportName + '_CACHE'] == 'on'
             });
+
+        return this.getWrappedResult(xjstJS);
+    },
+
+    getExportName: function() {
+        return 'BEMHTML';
+    },
+
+    getWrappedResult: function(xjstJS) {
+        var exportName = this.getExportName();
+
+        return [
+            '(function(g) {\n',
+            '  var __xjst = (function(exports) {\n',
+            '     ' + xjstJS + ';',
+            '     return exports;',
+            '  })({});',
+            '  var defineAsGlobal = true;',
+            '  if(typeof exports === "object") {',
+            '    exports["' + exportName + '"] = __xjst;',
+            '    defineAsGlobal = false;',
+            '  }',
+            '  if(typeof modules === "object") {',
+            '    modules.define("' + exportName + '", function(provide) { provide(__xjst) });',
+            '    defineAsGlobal = false;',
+            '  }',
+            '  defineAsGlobal && (g["' + exportName + '"] = __xjst);',
+            '})(this);'
+        ].join('\n');
     }
 
 };
