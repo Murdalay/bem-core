@@ -1723,7 +1723,6 @@ block('b1').content()([
 Сохранение информации о контекста нужно реализовать в шаблоне для блока `listitem`. Используем флаг `inListItem`:
 
 ```js
-
 block('listitem').match(!this.inListItem)(apply({inListItem:true}))
 ```
 
