@@ -1740,8 +1740,8 @@ this.ctx.elem: 'item'
     { block: 'b2' },
     { block: 'b3' }, // this.isLast() === false
     'text'
-  	])
-  )
+  ])
+)
 ```
 
 Такое поведение объясняется тем, что в целях оптимизации BEMHTML не выполняет предварительного полного обхода
@@ -1919,8 +1919,8 @@ block('b1').content()('text1')
 
 // шаблон на втором уровне переопределения
 block('b1').match(!this._myGuard).content()([
-apply({_myGuard:true}),  // получаем предыдущее значение content
-'text2'
+    apply({_myGuard:true}),  // получаем предыдущее значение content
+    'text2'
 ])
 ```
 
