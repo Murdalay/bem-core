@@ -2,14 +2,14 @@
 
 ### Introduction
 
-**This document** is the BEMHTML reference book.
+**This document** is a BEMHTML reference book.
 
 This document describes:
 
 * the basic features of BEMHTML;
-* the syntax of BEMJSON input data and BEMHTML templates;
-* the input data processing sequence and HTML generation;
-* examples of typical problems solving by means of BEMHTML.
+* a syntax of BEMJSON input data and BEMHTML templates;
+* a input data processing sequence and HTML generation;
+* the examples of typical problems solving by means of BEMHTML.
 
 **The target audience of this document** is web-developers and HTML-coders who are using the [BEM-methodology](http://bem.info/method/).
 
@@ -142,7 +142,7 @@ BEMHTML is a specialized language (DSL) which is **dilating** JavaScript.
 
 More precisely, BEMHTML is a superset of [XJST](https://github.com/veged/xjst/) pattern language, which is a superset of JavaScript.
 
-BEMHTML syntax provides a short notation for the correspondence between BEM-entities and generation of HTML elements an attributes.
+BEMHTML syntax provides a short notation for the correspondence between BEM-entities and generation of the HTML elements an attributes.
 Besides that, **any** JavaScript constructions can be used in templates.
 
 <a id="execution_language"></a>
@@ -181,8 +181,8 @@ BEM-tree should be transformed into a view-oriented format at the back-end level
 A good example of view-oriented data format you can find in the section [Transformation of the input data into a view-oriented format](#bringing_input).
 
 At the same time, the details of an HTML-page organization, which is the front-end developer's responsibility, should be determined only at the level of the templating engine.
-You can find an example of implementation of such solution in the chapter [Adding BEM-entities for solving layout problems](#additionbem).
-
+**You can find an example of implementation of such solution in the chapter [Adding BEM-entities for solving layout problems](#additionbem).
+**
 **See also**:
 
   * [BEMJSON syntax](#bemjson)
@@ -218,11 +218,11 @@ The appropriate template is selected and executed for the each mode.
 The modes allows us to divide an input element into the fragments.
 For description of each fragment a simple data-type can be used: strings are used for tag and class, a dictionary is used for attributes, booleans are used to describe the need of HTML-classes, etc.
 
-Thus it's possible to write declarative templates with a mode specified in template's predicate, and the data (of simple type which is corresponded to the mode) contained in the template's body. In this case the full representation of HTML-element can be defined with a several templates.
+Thus it's possible to write the declarative templates with a mode specified in template's predicate, and the data (of simple type which is corresponded to the mode) contained in the template's body. In this case the full representation of an HTML-element can be defined with a several templates.
 
-The **[default mode](#default)** has a special status. It's responsible for the entire generation of an HTML-element. This mode defines: the set and the order for processing the other modes corresponded to the fragments of HTML-element, the procedure of final build of an HTML-element representations from the fragments generated in the other modes.
+The **[default mode](#default)** has a special status. It's responsible for the entire generation of an HTML-element. This mode defines: the set and the order for processing the other modes corresponded to the fragments of an HTML-element, the procedure of final build of an HTML-element representations from the fragments generated in the other modes.
 
-The template which redefines the behavior in the default mode gives us the total control on elements generation from BEMHTML.
+The template which redefines a behavior in a default mode gives us the total control on elements generation from BEMHTML.
 
 **See also**:
 
@@ -232,13 +232,13 @@ The template which redefines the behavior in the default mode gives us the total
 
 #### The Context
 
-During processing of the input BEMJSON-tree, the tempating engine builds **the context**. It's a data structure which is accessible during the time when template are being applied. The context corresponds to the current element (node) of the input BEM-tree. It includes:
+During processing of the input BEMJSON-tree, the tempating engine builds **the context**. It's a data structure which is accessible during the time when templates are being applied. The context corresponds to the current element (node) of the input BEM-tree. It includes:
 
 * normalized information about the current BEM-entity;
-* a fragment of the original input data (current BEMJSON-tree element and its descendants);
+* a fragment of an original input data (a current BEMJSON-tree element and its descendants);
 * a string buffer in which the resulting HTML is being written;
 * service fields that contain information about the current state (mode, position in the input BEM-tree, etc.);
-* auxiliary functions.
+* the auxiliary functions.
 
 BEM-entity, which is described by the current context, is called a **context entity**.
 
@@ -276,7 +276,7 @@ To represent BEM and HTML subject domain data in BEMJSON, objects with special r
 
 <a name="notionbem"></a>
 
-##### Representation of BEM-Entities
+##### Representation of BEM-entities
 
 BEM-entities are represented in BEMJSON as objects, which can have the following fields:
 
@@ -355,14 +355,14 @@ BEM-entities are represented in BEMJSON as objects, which can have the following
 
 <a name="notionhtml"></a>
 
-##### HTML representation
+##### HTML Representation
 
-BEMJSON provides ability to specify certain aspects of the output HTML directly in the input data.
+BEMJSON provides ability to specify the certain aspects of the output HTML directly in the input data.
 This capability shouldn't be abused. BEMJSON is a data level, so HTML layout should be build at the level of the templating engine (BEMHTML).
-However, there are some situations where the description of HTML-representation at the BEMJSON level is warrantable.
-In this case, the author of BEMHTML templates should understand how the HTML parameters, specified in the input data, interact with HTML-representation defined at the templates' level.
+However, there are some situations where description of an HTML-representation at the BEMJSON level is warrantable.
+In this case, the author of the BEMHTML templates should understand how the HTML parameters, specified in the input data, interact with an HTML-representation defined at the templates' level.
 
-BEMJSON provides the following fields for the direct management of HTML-representation:
+BEMJSON provides the following fields for the direct management of an HTML-representation:
 
 <table>
 <tr>
@@ -433,27 +433,27 @@ BEMJSON provides the following fields for the direct management of HTML-represen
 </tr>
 </table>
 
-Please note that names and meaning of the BEMJSON fields, that are managing HTML-representation, are the same as the names and the meaning of the corresponding BEMHTML [standard modes](# standardmoda) (tag, attributes, class, etc.).
-If some aspects of the output HTML are **defined in the input data, and in BEMHTML-templates**, the higher priority have the definition given in BEMHTML-templates.
+Please note that names and meaning of the BEMJSON fields, that are managing an HTML-representation, are the same as the names and the meaning of the corresponding BEMHTML [standard modes](# standardmoda) (tag, attributes, class, etc.).
+If some aspects of the output HTML are **defined in the input data, and in the BEMHTML-templates**, the higher priority have the definition given in the BEMHTML-templates.
 
 When generating HTML one of the following actions will be done:
 
-  * **Merge** of the values of HTML-parameters specified in BEMJSON with values of parameters specified in BEMHTML-template. Merge of the values is performed only for the parameters that have an obvious meaning: `attrs`, `js`, `mix`.
-  * **Replacement** of the values of HTML-parameters specified in the BEMJSON with the values set in the ** BEMHTML-template**. It holds for the all other values: `tag`, `cls`, `bem`, `content`.
+  * **Merge** of the values of the HTML-parameters specified in BEMJSON with values of the parameters specified in the BEMHTML-template. Merge of the values is performed only for the parameters that have an obvious meaning: `attrs`, `js`, `mix`.
+  * **Replacement** of the values of the HTML-parameters specified in BEMJSON with the values set in the ** BEMHTML-template**. It holds for the all other values: `tag`, `cls`, `bem`, `content`.
 
 ***
-**NB** Priority of BEMHTML-templates allows **the templates' author** decide which HTML-parameters will have top-priority for each case (the parameters set in BEMHTML or in BEMJSON).
-The values of HTML-parameters specified in BEMJSON are available in templates when addressing to a fragment of the input BEMJSON-tree in the context of (field `this.ctx`).
+**NB** Priority of the BEMHTML-templates allows **the templates' author** to decide which HTML-parameters will have top-priority for each case (the parameters set in BEMHTML or in BEMJSON).
+The values of the HTML-parameters specified in BEMJSON are available in the templates when addressing to a fragment of the input BEMJSON-tree in the context of (field `this.ctx`).
 ***
 
 <a name="nesting"></a>
 
 ##### Nesting: Content
 
-For representation of nested BEM-entities (BEM-tree) BEMJSON has the reserved field `content`. Its value can be set to an arbitrary BEMJSON:
+For representation of the nested BEM-entities (BEM-tree) BEMJSON has the reserved field `content`. Its value can be set to an arbitrary BEMJSON:
 
- * A primitive data type (string, number). The value is used as a content (text) of the HTML-element corresponded to the context entity.
- * An object which describes the BEM-tree. The value is used for generation of HTML-elements nested in the corresponding to the context entity HTML-element.
+ * A primitive data type (a string, number). The value is used as a content (text) of the HTML-element corresponded to the context entity.
+ * An object which describes the BEM-tree. The value is used for generation of the HTML-elements nested in the corresponding to the context entity HTML-element.
 
 There is no limitations on nesting depth of the tree of BEM-entities build with help of the `content` field.
 
@@ -465,7 +465,7 @@ There is no limitations on nesting depth of the tree of BEM-entities build with 
 
 ##### Arbitrary Fields
 
-In addition to special fields, that describe a BEM-entity and its HTML-representation, the object may have any fields with an arbitrary data. This data will be available for use in BEMHTML-templates.
+In addition to the special fields, that describe a BEM-entity and its HTML-representation, the object may have any fields with an arbitrary data. This data will be available for use in the BEMHTML-templates.
 
 An example of an arbitrary field is a field `url` in the reference block:
 
@@ -500,10 +500,10 @@ A template consists of two expressions: **predicate** and **body**.
 
 Each **predicate** is a list of one or more **sub-predicates** (conditions).
 
-The predicate evaluates to true if only all sub-predicates are evaluated to true.
+The predicate evaluates to true if only all sub-predicates taek on the true value.
 The order of sub-predicates doesn't matter, *there is no guarantee on the order in which sub-predicates will be checked*.
 
-For a template definition shorthand `match` are reserved.  The `match` is the method, which takes a list of sub-predicates in the argument. It returns a function which takes the template body in the argument.
+For a template definition a shorthand `match` is reserved.  The `match` is a method, which takes a list of the sub-predicates in the argument. It returns a function which takes a template body in the argument.
 
 
 ```js
@@ -526,10 +526,10 @@ match(this.block === 'link').match(this._mode === 'tag').match(this.ctx.url)('a'
 From the logic's point of view, a BMHTML program is a flat **list of templates**.
 However, if multiple templates have **common sub-predicates**, they can be written as a nested structure in order to minimize the code repetition.
 
-Curly brackets are used to represent a nested structure. The brackets are placed after the common part of the predicates, and a block of code that contains distinct parts of predicates  the curly brackets.
+Curly brackets are used to represent a nested structure. The brackets are placed after a common part of the predicates, and a block of code that contains distinct parts of predicates is placed inside the curly brackets.
 
-Nested sub-predicates and corresponding to them templates's bodies are paces inside a common sub-predicate body and separetes by comma.
-Nesting depth of sub-predicates is not limited.
+Nested sub-predicates and corresponding to them templates' bodies are paced inside a common sub-predicate body and separeted by a comma.
+Nesting depth of the sub-predicates is not limited.
 
 
 ```js
@@ -547,7 +547,7 @@ match(subpredicate1).match(subpredicate3)(body2)
 ```
 
 ----
-**NB** If for the given context more than one template was defined, the **last** (in the listing order)template in BEMHTML-file will be executed.
+**NB** If more than one template was defined for the given context, the **last** (in the listing order) template in a BEMHTML-file will be executed.
 The specific templates should be listed after the more general ones.
 ***
 
@@ -559,22 +559,22 @@ The specific templates should be listed after the more general ones.
 
 #### Sub-predicates
 
-A template's predicate is a set of conditions that describe when the template should be applied.
+A template's predicate is a set of conditions that describes a  template apply.
 A template's sub-predicate is an elementary condition.
 
 BEMHTML provides the following types of conditions:
 
-* Match of the input BEM-tree.
-* Mode.
-* Arbitrary condition.
+* Match of the input BEM-tree
+* Mode
+* Arbitrary condition
 
 
-##### Match of the Input BEM-Tree.
+##### Match of the Input BEM-tree.
 
 
-Conditions on match of the input BEM-tree allow us describe the applicability of the templates in terms of BEM-entities: blocks' and elements' names, names and values of modifiers.
+Conditions on match of the input BEM-tree allow us to describe the applicability of the templates in terms of the BEM-entities: blocks' and elements' names, names and values of modifiers.
 
-For this purpose BEM related keywords are used in a predicates. It allows to avoid `match` keyword usage for the BEM related sub-predicates:
+For this purpose BEM-related keywords are used in the predicates. It allows us to avoid a `match` keyword usage for the BEM-related sub-predicates:
 
 
 Folowing predicates are equivalent:
@@ -587,8 +587,7 @@ match(this.block === 'foo').match(this.elem === 'bar')
 block('foo').elem('bar')
 ```
 
-
-Next set of keywords for BEM-entities are available:
+The next set of the keywords for BEM-entities is available:
 
 <table>
 <tr>
@@ -624,20 +623,20 @@ Next set of keywords for BEM-entities are available:
 </table>
 
 Identifiers of blocks, elements, modifiers and their values are written without quotes.
-BEMHTML parser accepts any string that consists of Latin characters and the hyphen as an identifier.
-Instead of identifier any JavaScript-expression can be used, it will be converted into a string.
+A BEMHTML parser accepts any string that consists of Latin characters and the hyphen as an identifier.
+Instead of an identifier any JavaScript-expression can be used, it will be converted into a string.
 
 ----
-**NB** Don't be confused with the block's modifiers and the element's modifiers in predicates.
+**NB** Don't be confused with the block's modifiers and the element's modifiers in the predicates.
 
  * `block input, mod theme black, elem hint` defines an element `hint` nested into the block `input` with **the block's modifier** `theme` and the modifier's value `black`.
  * `block input, elem hint, elemMod visibility visible` defines an element `hint` with **the element's modifier** `visibility` with value `visible`, the element is nested into the block `input`.
  * `block input, mod theme black, elem hint, elemMod visibility visible` defines an element `hint` with **the element's modifier** `visibility` set to the value `visible`, the element is nested into the block `input` which has **the block's modifier** `theme` set to the value `black`.
 
-For blocks' and elements' modifiers different keywords are used, therefore in predicates it's possible to combine conditions for modifiers of blocks and elements.
+For blocks' and elements' modifiers the different keywords are used, therefore in predicates it's possible to combine conditions for modifiers of blocks and elements.
 
 ***
-For arbitrary element related sub-predicates keyword `elemMatch` are used. It alows to execute templates without previous compilation:
+For the arbitrary element-related sub-predicates a keyword `elemMatch` is used. It alows executing templates without previous compilation:
 
 
 ```js
@@ -647,10 +646,10 @@ block('my-block')
 ```
 
 
-During processing, `!this.elem` sub-predicate are automatically added for the templates with no element related predicates. This helps to avoid triggering block templates on elements of the same block.
+During processing, `!this.elem` sub-predicate is automatically added to the templates without any element-related predicates. It helps us to avoid a block's template triggering of the elements of the same block.
 
 
-As a consequence, if we would use the construction `match` instead of `elemMatch` in example above, it will not work. Because of `!this.elem` sub-predicate, which was added durring the template processing.
+As a consequence, the example above will not work if we will use the construction `match` instead of `elemMatch`. Because of adding of a `!this.elem` sub-predicate durring a template processing.
 
 
 <a name="moda2"></a>
@@ -672,7 +671,7 @@ For checking of the standard modes the next keywords are used:
 * `attrs`
 * `content`
 
-The standart mode helpers notation are following:
+A standart mode helper's notation is following:
 
 ```
 keyword()(body)
@@ -689,33 +688,33 @@ or
 js()(true)
 ```
 
-For checking of the arbitrary mode the `mode` keyword are used. This is a helper method that acts similarly to the match construction.  
-Method takes in the argument a string-identifier (`[a-zA-Z0-9]+`) - the name of the arbitrary mode - and returns a function to which a templates' body shall be passen in the  argument. Notice, that the keyword `mode('my-mode')` is the shorthand for the `match(this._mode = 'my-mode')` literal.
+The `mode` keyword is used to check an arbitrary mode. It is a helper method that acts similar to the `match` construction.  
+The method takes in the argument a string-identifier (`[a-zA-Z0-9]+`) - the name of an arbitrary mode - and returns a function to which a templates' body shuold be passed in the  argument. Notice, that a keyword `mode('my-mode')` is a shorthand for the `match(this._mode = 'my-mode')` literal.
 
 
 <a name="random_condition"></a>
 
 ##### Arbitrary Condition
 
-Arbitrary conditions are taking into account matching of the data, which is not a part of BEM subject domain.
+The arbitrary conditions include the matching with data that do not belong to the BEM subject domain. 
 Any JavaScript-expression, which can be evaluated to a boolean, can be used as an arbitrary condition.
 
 ***
-**NB** It's preferable to write arbitrary conditions in the <a name="xjst-canonical"></a> **canonical XJST form**:
+**NB** It's preferable to write the arbitrary conditions in the <a name="xjst-canonical"></a> **canonical XJST form**:
 
 ```
 predicate expression === value
 ```
 
 Where
-* `predicate expression` is an arbitrary JavaScript expression, which can be evaluated to boolean;
+* `predicate expression` is an arbitrary JavaScript expression, which can be evaluated to a boolean;
 * `value` is an arbitrary JavaScript expression.
 
 At the same time, the number of **different** predicate expressions in sub-predicates should be minimized.
-Abidance of this recommendations allows XJST compiler perform optimization of templates' arbitrary conditions along with the standard conditions'(BEM-entities and modes) optimization.
+Abidance of this recommendations allows XJST compiler to perform optimization of templates' arbitrary conditions along with the standard conditions'(BEM-entities and modes) optimization.
 
 
-For an arbitrary predicate literals the `match` keyword should be used:
+For the arbitrary predicate literals a `match` keyword should be used:
 
 ```js
 match(this.ctx.url)( //an aribtrary conditin. Check if there url field is in input data.
@@ -723,7 +722,7 @@ match(this.ctx.url)( //an aribtrary conditin. Check if there url field is in inp
         attrs()({ href: this.ctx.url })
     )
 ```
-Arbitrary sub-predicate `this.ctx.url` will evaluates to true when the `url` field will be set in input data. In this case a template body will be executed.
+The arbitrary sub-predicate `this.ctx.url` evaluates to true if the `url` field is set in the input data. In this case a template body will be executed.
 ***
 
 <a name="body"></a>
@@ -753,13 +752,13 @@ match(predicate)({name: value})
 
 
 ***
-**NB** Necessity to wrap a block of JS-code into anonymous function is dictated by the way of templates execution in the development environment. This is a best practice. It alows to avoid the errors while accessing the context fields, which can not yet be determined at the time of a template execution.
+**NB** Necessity to wrap a block of JS-code into an anonymous function is determined by the templates execution in development environment. This is the best practice. It alows us to avoid the errors while accessing the context fields, which cannot yet be determined at the time of a template execution.
 
-If the JavaScript-code block is a simple constant literal, there is no need for an anonymous function.
+If the JavaScript-code block is a simple constant literal, there is no need to an anonymous function.
 ***
 
 
-The template body should be passed in the argument of a function, returned by: 
+A template body should be passed in the argument of a function, returned by: 
 * the `match` method;
 * the helper for the BEM-entities;
 * the helper for the mode, whether it standart or arbitrary.
@@ -779,7 +778,7 @@ match(arbitrary-predicate)(body)
 ```
 
 ***
-**NB** It is important to remember, that you should pass templates' body to a function returned by helper, but not to the helper itself. 
+**NB** Be aware, that you should pass templates' body to a function returned by a helper, but not to the helper itself. 
 
 Wrong:
 ```js
@@ -796,22 +795,22 @@ block('b1').tag()('span')
 Within a template's body it's possible to perform the following actions:
 
 * Calculate and return a value.
-  If the current mode a value of the particular type is expected, the result of template's body evaluation will be converted into the expected type and used.
+  If the current mode value of the particular type is expected, the returned value of template's body will be evaluated to the expected type and used.
   If the template doesn't return any value, the value `undefined` will be used.
 * Write some data directly into the HTML-result.
-  For this purpose one should write the data into the buffer of HTML-result (`this._buf.push(…)`).
-* Perform arbitrary operations.
+  For this purpose data should be written into the buffer of HTML-result (`this._buf.push(…)`).
+* Perform the arbitrary operations.
 
 <a id="xjst"></a>
 
-#### BEM-XJST special constructions
+#### BEM-XJST Special Constructions
 
-For the interpretation of BEMHTML-templates the [bem-xjst](https://github.com/bem/bem-xjst) module are used. It provides a set of BEM related helpers which are expanding the [XJST](https://github.com/veged/xjst) subject domain.
+For interpretation of the BEMHTML-templates the [bem-xjst](https://github.com/bem/bem-xjst) module is used. It provides a set of BEM related helpers which expands the [XJST](https://github.com/veged/xjst) subject domain.
 
-Together with helpers for BEM-entities and modes, it's possible to use BEM-XJST special constructions in a BEMHTML-templates. It allows one to modify the context and call procedures for template selecting and its implementation within the new (modified) context.
+Together with the helpers for BEM-entities and modes, it's possible to use the BEM-XJST special constructions in the BEMHTML-templates. It allows modifying the context and call procedures for template selection and its implementation within the new (modified) context.
 
 ***
-**NB** Notice that the functionality and syntax of BEM-XJST constructions may vary from the similar XJST constructions (for example, `apply()`).
+**NB** Notice that functionality and syntax of the BEM-XJST constructions may vary from the similar XJST constructions (for example, `apply()`).
 
 ***
 
@@ -848,12 +847,12 @@ local()({ x: 1, 'a.b.c': 2 })(function() {
 })
 ```
 
-After leaving the block `local` all variables whose values were changed in the block `expressions`, acquire their original values (the values they had before the execution of the block `expressions`).
+When leaving the block `local` all variables whose values were changed in the block `expressions`, acquire their original values (the values they had before the execution of the block `expressions`).
 The variables get back their original values in the order reverse to the order of variables assignment performed in the block `expressions`.
 
 
 ***
-**NB** If a variable (an object field), that wasn't previously defined, is assigned to a value within the block `expressions`, it will exist after leaving the block 'local', but its value will be set to 'undefined`.
+**NB** If a variable (an object field), that wasn't previously defined, is assigned to a value within the block `expressions`, it will exist after leaving the block `local`, but its value will be set to `undefined`.
 ***
 
 
@@ -863,7 +862,7 @@ The variables get back their original values in the order reverse to the order o
 
 ##### apply
 
-The construction `apply` serves for explicit call of the selection and execution procedures for a template with a predicate that evaluates to true in the given context. 'apply' allows one to call templates in the modified context.
+The construction `apply` serves for an explicit call of the selection and execution procedures for a template with a predicate that evaluates to true in the given context. `apply` allows us to call templates in the modified context.
 
 The syntax:
 
@@ -882,7 +881,7 @@ For example, the expression `apply('content')` is equivalent to `apply(this._mod
 When evaluating the expression `apply` the following steps will be done:
  1. Expressions evaluation (assignment) of the block `expressions`.
  2. The call of templates' selection and execution procedures in the context obtained at the step 1.
- 3. Restore the values of variables.
+ 3. Restore the values of the variables.
 
 The construction `apply(expressions)` is a short form of the expression `local(expressions)(apply())`.
 
@@ -892,7 +891,7 @@ The construction `apply(expressions)` is a short form of the expression `local(e
 
 
 The construction `applyNext` allows us to re-start the process of templates application to the current context directly in the template body.
-The result is obtained in way as if the template, in which the construction is executed, doesn't exist.
+The result is obtained that way as if the template, in which this construction is executed, doesn't exist.
 The construction returns a value obtained by the templates' application to the current context.
 
 The syntax:
@@ -901,7 +900,7 @@ The syntax:
 applyNext(expressions)
 ```
 
-where `expressions` is a list of expressions which are modifying the context (variables hash or a string that means a mode assignment). This list can be empty. It's similar to the block `expressions` of the [`apply` construction](#apply).
+where `expressions` is a list of expressions which modify the context (variables hash or a string that means a mode assignment). This list can be empty. It's similar to the block `expressions` of the [`apply` construction](#apply).
 
 When `applyNext` is called the following steps will be done:
 
@@ -930,7 +929,7 @@ block('b1').match(!this.ctx[_randomflag])(
 )
 ```
 
-where `statements` is arbitrary JavaScript-expressions allowed in the template's body.
+where `statements` is an arbitrary JavaScript-expression allowed in the template's body.
 
 **See also**:
 
@@ -965,10 +964,10 @@ During evaluation of the expression `applyCtx` the following steps are performed
 The expression `applyCtx(newctx)` is a short form of the expression `applyNext(this.ctx = {newctx}, '')`.
 
 ***
-**NB** When ussing `this.ctx` object in the argument of `applyCtx()` one should:
+**NB** To use a `this.ctx` object as an argument of `applyCtx()` do the following:
 
 * add some protective flag to the context, to avoid an infinite recursion;
-* add to the templates predicate check for the protective flag existence. 
+* add to the template's predicate check for the protective flag availability. 
 
 ***
 
@@ -996,7 +995,7 @@ The fragment of output HTML-tree (HTML-element) for which the current mode is re
 
 Such approach places the following restrictions on the templates:
 
-  * If the template writes some date into HTML, in its predicate a mode should be specified.
+  * If the template writes some date into HTML, a mode should be specified in its predicate.
   * The maximum number of modes that can be specified in a predicate is one.
   * A template's body should evaluate to a value of the type which is expected for the current mode.
 
@@ -1057,7 +1056,7 @@ In particular, such call can be performed automatically when using [construction
 
 In the mode `default` the entire output HTML-element corresponding to the input BEM-entity is formed.
 
-During the execution of the mode `default` the following actions are taking place:
+During the execution of the mode `default` the following actions are performed:
 
   * the call of all other standard modes which are responsible for the different aspects of HTML-element;
   * merge of the results of all called modes execution into a resulting string;
@@ -1071,7 +1070,7 @@ The figure represents the case of processing an element which has a pair (openin
 Processing of short (closed in the start tag) elements is similar to the represented in the figure above. The only difference is the absence of the closing tag and recursion.
 The context auxiliary function `this._.isShortTag` depending on the element's (tag) name decides if the current element should be processed as the short one.
 
-Template's definition in the mode `default` (sub-predicate `def()`) is needed in case when you need to override the generation process of the output HTML-element, for example, to add DOCTYPE to the tag HTML:
+Template's definition in the mode `default` (sub-predicate `def()`) is needed if you need to override the generation process of the output HTML-element, for example, to add DOCTYPE to the tag HTML:
 
 ```js
 block('b-page')(
@@ -1095,13 +1094,13 @@ The mode `tag` specifies the name of an input HTML-element (the tag). By default
 ![mode-tag](https://raw.github.com/bem/bemhtml/master/common.docs/reference/reference_mode_tag.png)
 
 ***
-**NB** If the value of `tag` was set to an empty string, then for the given entity the step of HTML-element generation (tag and attributes generation) will be skipped, but the element's content will be processed in a standard way.
+**NB** If the value of `tag` is set to an empty string, then for the given entity the step of HTML-element generation (tag and attributes generation) will be skipped, but the element's content will be processed in a standard way.
 ***
 
 Template's definition in the mode `tag` (sub-predicate `tag()`) is necessary in the following cases:
 
-  * for the given entity one needs to generate an HTML-element with the name different form `div`;
-  * if there is no need to generate an HTML-element for the given entity, but the nested entities should be processed.
+  * if it is necessary to generate an HTML-element for the given entity with the name that differs from `div`;
+  * if generation of an HTML-element for the given entity is cancelled, the nested entities should be processed.
 
 <table>
 <tr>
@@ -1149,11 +1148,11 @@ The mode `js` accepts two types for the template's body:
   * `Boolean` is a flag that specifies if the given block has a client-side JavaScript.
   * `Object` is a hash which contains JavaScript parameters (it's assumed that the given block has a client-side JavaScript).
 
-In the figure below the elements, for which generation the mode `js` is responsible, are of highlighted:
+Code section of HTML, that are generated by mode `js`, are highlighted in the figure below:
 
 ![mode-js](https://raw.github.com/bem/bemhtml/master/common.docs/reference/reference_mode_js.png)
 
-The template's definition in the mode `js` (sub-predicate `js()`) makes sense if only the block has a client-side JavaScript.
+Template's definition in the mode `js` (sub-predicate `js()`) makes sense if only the block has a client-side JavaScript.
 
 <table>
 <tr>
@@ -1196,7 +1195,7 @@ A fragment of HTML, for which generation the mode `bem` is responsible, is highl
 
 Template's definition in the mode `bem` (sub-predicate `bem()`) makes sense if only for the given entity there is **no need** to generate HTML-classes related to the BEM subject domain.
 It may be necessary for the compliance with the HTML syntax requirements.
-For example, the tag `html`, `meta`, `link`, `script`, `style` can not have the attribute `class`.
+For example, the tag `html`, `meta`, `link`, `script`, `style` cannot have the attribute `class`.
 
 <table>
 <tr>
@@ -1333,13 +1332,13 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 * *The type of a template's body: `String`*
 * *The default value: `'onclick'`*
 
-The mode `jsAttr` defines name of HTML-attribute in the value of which the client-side JavaScript parameters for the given block will be passed.
+The mode `jsAttr` defines a name of HTML-attribute in the value of which the client-side JavaScript parameters for the given block will be passed.
 By default the attribute `onclick` is used.
 In the figure below the HTML-fragment, for generation of which the mode `jsAttr` is responsible, is highlighted:
 
 ![mode-jsattr](https://raw.github.com/bem/bemhtml/master/common.docs/reference/reference_mode_jsattr.png)
 
-The template's definition in the  mode `jsAttr` (sub-predicate `jsAttr()`) is necessary if one needs to pass the JavaScript parameters in nonstandard attribute.
+The template's definition in the  mode `jsAttr` (sub-predicate `jsAttr()`) is necessary if it is necessary to pass the JavaScript parameters in nonstandard attribute.
 For example, for the touch-sites for this purpose the attribute `ondblclick` is used.
 
 <table>
@@ -1369,7 +1368,7 @@ For example, for the touch-sites for this purpose the attribute `ondblclick` is 
 * *The type of a template's body: `Object`*
 * *The default value: `{}`*
 
-The mode `attrs` allows us specify names of arbitrary HTML-attributes for the given element.
+The mode `attrs` allows us to specify the names of the arbitrary HTML-attributes for a given element.
 By default the additional attributes are not generated.
 The HTML-fragment, for generation of which the mode `attrs` is responsible, is highlighted in the figure below:
 
@@ -1380,13 +1379,13 @@ A valid identifier of an HTML-attribute should be used for a key, and a string o
 When using a special characters in attribute values, they are escaped with the auxiliary function `this._.attrEscape()`.
 
 ***
-**NB** If value of an attribute set to `undefined`, this attribute won't be outputted to the HTML-element.
+**NB** If value of an attribute is set to `undefined`, this attribute won't be outputted to the HTML-element.
 ***
 
 A template should be defined in the mode `attrs` (sub-predicate `attrs()`) in the following cases:
 
-  * One needs to add an arbitrary attributes at the level of the templating egine;
-  * The specified attributes should be excluded from the output, even if they were defined in the input BEMJSON.
+  * it is necessary to add the arbitrary attributes to the level of the templating egine;
+  * it is necessary to exclude some attributes from the output, even if they have been defined in the input BEMJSON.
 
 <table>
 <tr>
@@ -1500,8 +1499,8 @@ A template's author can define any additional fields in the context.
 
 All fields can be divided into two categories:
 
-  * **Context-dependent**, whose values vary depending on the node which is being processed and the processing phase.
-  * **Context-independent**, whose values are unchanging.
+  * **Context-dependent**, which values vary depending on the node which is being processed and the processing phase.
+  * **Context-independent**, which values are unchanged.
 
 **See also**:
 
@@ -1509,7 +1508,7 @@ All fields can be divided into two categories:
 
 <a name="contextdependent"></a>
 
-#### Context-Dependent Fields
+#### Context-dependent Fields
 
 <table>
 <tr>
@@ -1576,18 +1575,17 @@ All fields can be divided into two categories:
 </table>
 
 ***
-**NB** Keywords for checking BEM-entities in the predicate are shorthand for checking the values of the fields `block`, `elem`, etc. in the current context. For example, sub-predicate `block b1` is equivalent to sub-predicate `this.block === 'b1'`.
+**NB** The keywords for checking BEM-entities in the predicate are a shorthand for checking the values of the fields `block`, `elem`, etc. in the current context. For example, sub-predicate `block b1` is equivalent to sub-predicate `this.block === 'b1'`.
 
-Similarly, the key words for the mode checking in the predicate are shorthand for checking the value of
-service field `_mode` in the current context. For example, sub-predicate `tag` equivalent to sub-predicate
+Similarly, the key words for the mode checking in the predicate are shorthand for checking the value of service field `_mode` in the current context. For example, sub-predicate `tag` equivalent to sub-predicate
 `this._mode === 'tag'`.
 ***
 
 <a name="extensionbem"></a>
 
-##### Completing BEM-Entities With Help of the Context
+##### Completing BEM-entities With Help of the Context
 
-In BEMJSON BEM-entities are usually written in a minimized form. For example, the element `item` is nested into the block `menu`; in the object, which describes the menu item, the name of the menu block, that contains it, is not specified:
+In BEMJSON the BEM-entities are usually written in a minimized form. For example, the element `item` is nested into the block `menu`; in the object, which describes the menu item, the name of the menu block, that contains it, is not specified:
 
 ```js
 {
@@ -1638,7 +1636,7 @@ If template's predicate contains a sub-predicate with an arbitrary condition, wh
 
 <a name="algorithmbem"></a>
 
-##### The Algorithm for Computing Position of the BEM-Entity
+##### The Algorithm for Computing Position of the BEM-entity
 
 Position in the BEM-tree (context field `this.position`) is a natural number that indicates the index number of the current (the context one) BEM-entity among its siblings in the BEM-tree (peer entities).
 
@@ -1693,7 +1691,7 @@ In reality, the case of `this.isLast()` incorrect operation described above shou
 
 <a name="context_independent"></a>
 
-#### Context-Independent Fields
+#### Context-independent Fields
 
 All context-independent fields are grouped in the object `this._`. This fields are auxiliary functions, that are used by the templating engine.
 Author of templates can also use these functions in the template's body as well as in predicates.
@@ -1743,11 +1741,11 @@ Author of templates can also use these functions in the template's body as well 
 
 <a name="bringing_input"></a>
 
-#### Converting the Input Data into the View-Oriented Format
+#### Converting the Input Data into the View-oriented Format
 
 ##### Problem
 
-One needs to form an input BEM-tree for a news feed page (a list of posts with information about the author) which will be easy to handle in terms of BEMHTML templates.
+One needs to form an input BEM-tree for a news feed page (a list of posts with information about the author) which will be easy to handle in terms of the BEMHTML templates.
 This tree should be view-oriented, i.e. set and order of the BEM-entities should correspond to set and order of the DOM-nodes of an output HTML.
 
 ##### Solution
@@ -1942,7 +1940,7 @@ block('b-inner').def()
 
 <a name="additionbem"></a>
 
-#### Adding BEM-Entities for Solving Layout Problems
+#### Adding BEM-entities for Solving Layout Problems
 
 ##### Problem
 
@@ -2011,7 +2009,7 @@ block('box').match(!this.ctx._processed).content()(local({'ctx._processed':true}
 
 <a name="use_bem"></a>
 
-#### Use of the BEM-Entity Position
+#### Use of the BEM-entity Position
 
 ##### Problem
 
@@ -2054,7 +2052,7 @@ block('menu')(
 
 <a name="check_predicate"></a>
 
-#### Check of The Predicates in a Certain order
+#### Check of the Predicates in a Certain Order
 
 ##### Problem
 
