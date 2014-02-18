@@ -91,6 +91,7 @@ tag - generated content - the closing tag) is inevitable. The redundancy is even
 
 <a id="declarativ"></a>
 
+
 ##### Declarative Approach
 
 Declarative approach allows us to write templates in form of sets of descriptive statement with the following structure: *the input data type (BEM-entity) — HTML representation (tag, attribute, etc.)*.
