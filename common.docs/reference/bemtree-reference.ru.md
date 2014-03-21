@@ -340,7 +340,7 @@ block('page').def()(function() {
   block: 'b2'
 })</code></pre>
     </td>
-    <td>{ block: 'b1', content: { block: 'b2' }
+    <td>{ block: 'b1', content: { block: 'b2' } }
 </td>
 </tr>
 </table>
