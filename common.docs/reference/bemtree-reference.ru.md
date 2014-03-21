@@ -326,7 +326,7 @@ block('page').def()(function() {
 <tr>
     <th>Входные данные</th>
     <th>Шаблон</th>
-    <th>HTML-результат</th>
+    <th>результирующий BEMJSON</th>
 </tr>
 
 <tr>
@@ -340,7 +340,8 @@ block('page').def()(function() {
   block: 'b2'
 })</code></pre>
     </td>
-    <td><pre><code>&lt;div class="b1"&gt;&lt;div class="b2"&gt;&lt;/div&gt;&lt;/div&gt;</code></pre></td>
+    <td>{ block: 'b1', content: { block: 'b2' }
+</td>
 </tr>
 </table>
 
