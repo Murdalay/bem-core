@@ -182,8 +182,9 @@ BEM-tree should be transformed into a view-oriented format at the back-end level
 A good example of view-oriented data format you can find in the section [Transformation of the input data into a view-oriented format](#bringing_input).
 
 At the same time, the details of an HTML-page organization, which is the front-end developer's responsibility, should be determined only at the level of the templating engine.
-**You can find an example of implementation of such solution in the chapter [Adding BEM-entities for solving layout problems](#additionbem).
-**
+**You can find an example of implementation of such solution in the chapter [Adding BEM-entities for solving layout problems](#additionbem).**
+
+
 **See also**:
 
   * [BEMJSON syntax](#bemjson)
@@ -440,7 +441,7 @@ If some aspects of the output HTML are **defined in the input data, and in the B
 When generating HTML one of the following actions will be done:
 
   * **Merge** of the values of the HTML-parameters specified in BEMJSON with values of the parameters specified in the BEMHTML-template. Merge of the values is performed only for the parameters that have an obvious meaning: `attrs`, `js`, `mix`.
-  * **Replacement** of the values of the HTML-parameters specified in BEMJSON with the values set in the ** BEMHTML-template**. It holds for the all other values: `tag`, `cls`, `bem`, `content`.
+  * **Replacement** of the values of the HTML-parameters specified in BEMJSON with the values set in the **BEMHTML-template**. It holds for the all other values: `tag`, `cls`, `bem`, `content`.
 
 ***
 **NB** Priority of the BEMHTML-templates allows **the templates' author** to decide which HTML-parameters will have top-priority for each case (the parameters set in BEMHTML or in BEMJSON).
@@ -615,10 +616,10 @@ The next set of the keywords for BEM-entities is available:
     <td><pre><code>block('b-head-logo').mod('size', 'big')</code></pre></td>
 </tr>
 <tr>
-   <td><code>mods</code></td>
-   <td>the name and value of block's element</td>
+   <td><code>elemMod</code></td>
+   <td>the name and value of element's modifier</td>
    <td>identifier <code>[a-zA-Z0-9-]+ </code> or arbitrary js-expression</td>
-   <td><pre><code>block('b-head-logo').elem('text').mods('size', 'big')</code></pre></td>
+   <td><pre><code>block('b-head-logo').elem('text').elemMod('size', 'big')</code></pre></td>
 </tr>
 </table>
 
@@ -661,7 +662,7 @@ It mens that the given predicate will be evaluated to true when the correspondin
 
 For checking of the standard modes the next keywords are used:
 
-* `default` (`def`)
+* `def` (`default` mode)
 * `tag`
 * `bem`
 * `mix`
@@ -1925,8 +1926,6 @@ block('b-inner').def()
         ctx._wrapped=true;
         applyCtx({ block: 'b-wrapper', content: ctx })
    })
-
-
 ```
 
 

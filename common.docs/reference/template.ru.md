@@ -153,10 +153,10 @@ block('foo').elem('bar')
     <td><pre><code>block ('b-head-logo').mod('size', 'big')</code></pre></td>
 </tr>
 <tr>
-   <td><code>mods</code></td>
+   <td><code>elemMod</code></td>
    <td>имя и значение модификатора элемента</td>
    <td>идентификатор <code>[a-zA-Z0-9-]+ </code>или произвольное js-выражение</td>
-   <td><pre><code>block('b-head-logo').elem('text').mods('size', 'big')</code></pre></td>
+   <td><pre><code>block('b-head-logo').elem('text').elemMod('size', 'big')</code></pre></td>
 </tr>
 </table>
 
@@ -168,7 +168,7 @@ block('foo').elem('bar')
 
  * `block('input').mod('theme', 'black').elem('hint')` задает элемент `hint`, вложенный в блок `input` с **модификатором блока**
    `theme` в значении `black`.
- * `block('input').elem('hint').mods('visibility', 'visible')` задает элемент `hint` с **модификатором элемента** `visibility`
+ * `block('input').elem('hint').elemMod('visibility', 'visible')` задает элемент `hint` с **модификатором элемента** `visibility`
    в значении `visible` вложенный в блок `input`.
  * `block('input').mod('theme', 'black').elem('hint').elemMod('visibility', 'visible')` задает элемент `hint` с **модификатором
    элемента** `visibility` в значении `visible` вложенный в блок `input` с **модификатором блока** `theme` в значении
@@ -205,7 +205,7 @@ block('my-block')
 
 Для проверки стандартных мод используются ключевые слова:
 В BEMHTML:
-* `default` (`def`)
+* `def` (мода `default`)
 * `tag`
 * `bem`
 * `mix`

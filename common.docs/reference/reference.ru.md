@@ -22,7 +22,6 @@
 * БЭМ.
 
 
-
 **В документе не описаны** настройка среды разработки и процедуры компиляции шаблонов.
 
 <a name="bemhtml"></a>
@@ -636,10 +635,10 @@ block('foo').elem('bar')
     <td><pre><code>block ('b-head-logo').mod('size', 'big')</code></pre></td>
 </tr>
 <tr>
-   <td><code>mods</code></td>
+   <td><code>elemMod</code></td>
    <td>имя и значение модификатора элемента</td>
    <td>идентификатор <code>[a-zA-Z0-9-]+ </code>или произвольное js-выражение</td>
-   <td><pre><code>block('b-head-logo').elem('text').mods('size', 'big')</code></pre></td>
+   <td><pre><code>block('b-head-logo').elem('text').elemMod('size', 'big')</code></pre></td>
 </tr>
 </table>
 
@@ -651,7 +650,7 @@ block('foo').elem('bar')
 
  * `block('input').mod('theme', 'black').elem('hint')` задает элемент `hint`, вложенный в блок `input` с **модификатором блока**
    `theme` в значении `black`.
- * `block('input').elem('hint').mods('visibility', 'visible')` задает элемент `hint` с **модификатором элемента** `visibility`
+ * `block('input').elem('hint').elemMod('visibility', 'visible')` задает элемент `hint` с **модификатором элемента** `visibility`
    в значении `visible` вложенный в блок `input`.
  * `block('input').mod('theme', 'black').elem('hint').elemMod('visibility', 'visible')` задает элемент `hint` с **модификатором
    элемента** `visibility` в значении `visible` вложенный в блок `input` с **модификатором блока** `theme` в значении
@@ -688,7 +687,7 @@ block('my-block')
 
 Для проверки стандартных мод используются ключевые слова:
 
-* `default` (`def`)
+* `def` (для моды`default`)
 * `tag`
 * `bem`
 * `mix`
@@ -846,6 +845,7 @@ block('b1').tag()('span')
 
 ***
 **NB** Обратите внимание, что функциональность и синтаксис BEM-XJST-конструкций (например, конструкции`apply()`) может отличаться от синтаксиса и функциональности аналогичных конструкций языка XJST.
+
 ***
 
 
@@ -884,7 +884,7 @@ local(this)({hash})(function() {
 ```js
 local()({ x: 1, 'a.b.c': 2 })(function() {
 
-   // statements body
+    // statements body
 
 })
 ```
@@ -1104,7 +1104,7 @@ applyCtx(newctx)
 
 На рисунке ниже схематически отражено, в каких модах генерируются различные фрагменты выходного HTML-элемента.
 
-![mode-default](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_default.png)
+![mode-default](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_default.png)
 
 Схема отражает вариант обработки элемента, имеющего пару открывающий—закрывающий тег и вложенное содержимое. Обработка
 коротких (самозакрытых) элементов аналогична и отличается только отсутствием закрывающего тега и рекурсии. Следует
@@ -1136,7 +1136,7 @@ block ('b-page')(
 Мода `tag` задает имя выходного HTML-элемента (тег). По умолчанию имя элемента равно `div`. Фрагменты HTML, за генерацию
 которых отвечает мода `tag`, выделены на рисунке:
 
-![mode-tag](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_tag.png)
+![mode-tag](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_tag.png)
 
 ***
 **NB** Если в качестве значения `tag` указать пустую строку, для данной сущности будет пропущен этап генерации
@@ -1197,7 +1197,7 @@ HTML-элемента (тега и всех атрибутов), но содер
 
 Фрагменты HTML, за генерацию которых отвечает мода `js`, выделены на рисунке:
 
-![mode-js](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_js.png)
+![mode-js](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_js.png)
 
 Определение шаблона по моде `js` (подпредикат `js()`) имеет смысл только в том случае, если у блока имеется клиентский
 JavaScript.
@@ -1239,7 +1239,7 @@ JavaScript.
 классов, описывающие данную БЭМ-сущность. По умолчанию генерация БЭМ-классов выполняется. Фрагмент HTML, за генерацию
 которого отвечает мода `bem`, выделен на рисунке:
 
-![mode-bem](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_bem.png)
+![mode-bem](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_bem.png)
 
 Определение шаблона по моде `bem` (подпредикат `bem()`) имеет смысл только в том случае, если для данной сущности
 **не нужно** генерировать HTML-классы, относящиеся к БЭМ-предметной области. Это может быть необходимо для соблюдения
@@ -1277,7 +1277,7 @@ JavaScript.
 Мода `cls` позволяет определить произвольную строку, добавляемую в значение атрибута `class` помимо автоматически
 генерируемых значений. Фрагмент HTML, за генерацию которого отвечает мода `cls`, выделен на рисунке:
 
-![mode-cls](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_cls.png)
+![mode-cls](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_cls.png)
 
 Определение шаблона по моде `cls` (подпредикат `cls()`) имеет смысл в том случае, если для данного элемента необходимы
 специфические HTML-классы, не относящиеся к предметной области БЭМ.
@@ -1327,7 +1327,7 @@ JavaScript.
 
 Фрагмент HTML, за генерацию которого отвечает мода `mix`, выделен на рисунке:
 
-![mode-mix](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_mix.png)
+![mode-mix](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_mix.png)
 
 Определение шаблона по моде `mix` (подпредикат `mix()`) требуется, когда необходимо выполнить примешивание блока
 или элемента на уровне шаблонизатора.
@@ -1393,7 +1393,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 данного блока. По умолчанию используется атрибут `data-bem`. Фрагмент HTML, за генерацию которого отвечает мода `jsAttr`,
 выделен на рисунке:
 
-![mode-jsattr](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_jsattr.png)
+![mode-jsattr](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_jsattr.png)
 
 Определение шаблона по моде `jsAttr` (подпредикат `jsAttr()`) необходимо в том случае, если требуется передавать параметры JavaScript в нестандартном атрибуте. 
 
@@ -1427,7 +1427,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 Мода `attrs` позволяет задать имена и значения произвольных HTML-атрибутов для данного элемента. По умолчанию
 дополнительные атрибуты не генерируются. Фрагмент HTML, за генерацию которого отвечает мода `attrs`, выделен на рисунке:
 
-![mode-attrs](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_attrs.png)
+![mode-attrs](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_attrs.png)
 
 Значением тела шаблона для данной моды должен быть объект (хеш), содержащий имена и значения атрибутов в качестве
 пар ключ—значение. В качестве ключа должен выступать валидный идентификатор HTML-атрибута, а в качестве значения — строка или число. При выводе HTML специальные символы в значениях атрибутов экранируются вспомогательной функцией `this._.attrEscape()`.
@@ -1436,7 +1436,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 **NB** Если в качестве значения атрибута указать `undefined`, этот атрибут не будет выведен в HTML-элементе.
 ***
 
-Определение шаблона по моде `attrs` (подпредикат `attrs`) необходимо во всех случаях, когда требуется:
+Определение шаблона по моде `attrs` (подпредикат `attrs()`) необходимо во всех случаях, когда требуется:
 
   * добавить произвольные HTML-атрибуты на уровне шаблонизатора;
   * исключить указанные атрибуты из вывода, даже если они были определены во входном BEMJSON.
@@ -1506,7 +1506,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 
 Фрагмент HTML, за генерацию которого отвечает мода `content`, выделен на рисунке:
 
-![mode-content](https://raw.github.com//bem/bem-core/v1/common.docs/reference/reference_mode_content.png)
+![mode-content](https://raw.github.com/bem/bem-core/v1/common.docs/reference/reference_mode_content.png)
 
 Определение шаблона по моде `content` (подпредикат `content()`) необходимо, если:
 
@@ -1752,11 +1752,11 @@ this.ctx.elem: 'item'
 
 ```js
   block('b1')(
-  	content()([
-    	{ block: 'b2' },
-    	{ block: 'b3' }, // this.isLast() === false
-    	'text'
-	])
+    content()([
+        { block: 'b2' },
+        { block: 'b3' }, // this.isLast() === false
+        'text'
+    ])
   )
 ```
 
