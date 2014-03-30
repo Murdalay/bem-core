@@ -1,0 +1,16 @@
+{
+    "title": "Шаблонизация данных в bem-core",
+    "createDate": "15-04-2014",
+    "editDate": "",
+    "summary": "Cправочное руководство по шаблонизации в bem-core. Унифиуированный синтаксис шаблонов.",
+    "thumbnail": "",
+    "authors": ["ivanichenko-sergey"],
+    "tags": ["BEMHTML", "BEMTREE", "BEM-XJST"],
+    "categories": [
+        {"name": "bem-core/1.0.0/BEMHTML", "url": "bem-core/1.0.0/bemhtml", "type": "libs"},
+        {"name": "Шаблонизаторы/BEMHTML", "url": "templating-engines/bemhtml", "order": "30/10","type": "tools"}
+    ],
+    "translators": [],
+    "url": "/common.docs/reference/",
+    "type": ["libs", "tools"]
+}
