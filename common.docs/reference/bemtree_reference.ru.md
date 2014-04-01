@@ -302,7 +302,7 @@ block('page').def()(function() {
 <a name="contextdependent"></a>
 
 #### Контекстно-зависимые поля
-Технология BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [доступных в UTS](http://ru.bem.info/libs/bem-core/2.1.0/template/template#contextdependent).
+Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [доступных в UTS](http://ru.bem.info/libs/bem-core/2.1.0/template/template#contextdependent).
 
 
 <a name="context_independent"></a>
