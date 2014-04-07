@@ -20,8 +20,7 @@
 * JavaScript;
 * CSS;
 * БЭМ;
-* BEMJSON;
-* UTS.
+* BEMJSON.
 
 
 **В документе не описаны** настройка среды разработки и процедуры компиляции шаблонов.
@@ -44,8 +43,8 @@
 
 
 <a name="uts"></a>
-####Поддержка UTS
-BEMHTML – [UTS-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMHTML использует **унифицированный синтаксис шаблонов** и сохраняет все особенности UTS-шаблонизаторов, такие как:
+####Поддержка синтаксиса BEM-XJST-шаблонизаторов
+BEMHTML – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMHTML использует **унифицированный синтаксис шаблонов** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
 * [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.1.0/template/template#bem_area);
 * [декларативные шаблоны](http://ru.bem.info/libs/bem-core/2.1.0/template/template#decl_templatе);
 * [язык описания и исполнения шаблонов — JavaScript](http://ru.bem.info/libs/bem-core/2.1.0/template/template#language);
