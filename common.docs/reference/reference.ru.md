@@ -35,8 +35,8 @@
 Для обработки BEMHTML-шаблонов, используется модуль [bem-xjst](https://github.com/bem/bem-xjst), расширенный логикой из базового шаблона BEMHTML – [i-bem.bemhtml](https://github.com/bem/bem-core/blob/v1/common.blocks/i-bem/i-bem.bemhtml).
 
 Специфическая для BEMHTML логика, при этом, реализована на уровне базового шаблона `i-bem.bemhtml`. Базовй шаблон определяет:
-* набор и порядок вызова стандартных мод;
-* доступные поля контекста
+* набор и порядок вызова [стандартных мод](#standardmoda);
+* доступные [поля контекста](#context_field)
 * поведение конструкции `apply`, а так же конструкций, использующих `apply`, например `applyNext`.
 
 Подробнее об особенностях архитектуры BEMHTML читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_arch) документа по [шаблонизации данных в bem-core](http://ru.bem.info/libs/bem-core/2.1.0/template/template).
@@ -44,7 +44,7 @@
 
 <a name="uts"></a>
 ####Поддержка синтаксиса BEM-XJST-шаблонизаторов
-BEMHTML – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMHTML использует **унифицированный синтаксис шаблонов** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
+BEMHTML – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMHTML использует **BEM-XJST-синтаксис шаблонов** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
 * [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.1.0/template/template#bem_area);
 * [декларативные шаблоны](http://ru.bem.info/libs/bem-core/2.1.0/template/template#decl_templatе);
 * [язык описания и исполнения шаблонов — JavaScript](http://ru.bem.info/libs/bem-core/2.1.0/template/template#language);
@@ -697,7 +697,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 <a name="contextdependent"></a>
 
 #### Контекстно-зависимые поля
-
+BEMHTML расширяет набор [контекстно-зависимых полей BEM-XJST](http://ru.bem.info/libs/bem-core/2.1.0/template/template#contextdependent) следующими:
 <table>
 <tr>
     <th>Поле</th>
@@ -798,6 +798,9 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 
 Все контекстно-независимые поля сгруппированы в объекте `this._` и представляют собой вспомогательные функции,
 используемые при работе шаблонизатора. Автор шаблонов также может пользоваться этими функциями как в теле шаблонов, так и в предикатах.
+
+BEMHTML расширяет набор [контекстно-независимых полей BEM-XJST](http://ru.bem.info/libs/bem-core/2.1.0/template/template#context_independent) следующими:
+
 
 <table>
 <tr>
