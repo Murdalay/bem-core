@@ -446,25 +446,27 @@ BEMTREE-шаблон блока устанавливает соответств�
 Предположим, что исходные данные сохранены в поле контекста `this.ctx.data`. Тогда BEMTREE-шаблон, осуществляющий нужное преобразование, может иметь такой вид:
 
 ```js
-block('posts').def()(
-  function() {
-    var posts = this.ctx.data.posts,
-    users = this.ctx.data.users;
+  block('posts').match(!this.processed).def()( 
+    function() {
+        var result = [],
+        ctx = this.ctx,
+        posts = this.ctx.data.posts;
 
-    posts.forEach(function(post) {
-      var login = post.author;
+        posts.forEach(function(post, index){
+          var login = post.author,
+          username = ctx.data.users[login].name,
+          url = ctx.data.users[login].userpic;
+          
+          result[index] = { 
+            block: 'post',      
+            content: [{ block: 'userpic', content: url },
+                      { block: 'user', content: username },
+                      { elem: 'text', content: post.text }]   
+          }
+        }); 
+    
+        return  local({ processed: true })(applyCtx({ block: 'posts', content: result }))
 
-      post.block = 'post'; 
-      post.url = users[login].userpic;
-      post.username = users[login].name;
-      post.content = [
-                { block: 'userpic', content: post.url },
-                { block: 'user', content: post.username },
-                { elem: 'text', content: post.text}
-                ];      
-      });
-      
-    applyCtx({ block: 'posts', content: posts })
     })
     ```
     

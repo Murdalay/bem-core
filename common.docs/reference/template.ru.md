@@ -1098,8 +1098,8 @@ modules.require(['BEMTREE', 'BEMHTML'],  function(BEMTREE, BEMHTML) {
 При этом требуется явно указать путь до бандлов:
 
   ```js
-var	BEMTREE = require('./desktop.bundles/index/index.bemtree'),
-		BEMHTML = require('./desktop.bundles/index/index.bemhtml');
+var	BEMTREE = require('./desktop.bundles/index/index.bemtree').BEMTREE,
+		BEMHTML = require('./desktop.bundles/index/index.bemhtml').BEMHTML;
   ```
   
 В примере выше путь приведен относительно модуля, расположенного в корневом каталоге проекта.
