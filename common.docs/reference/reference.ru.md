@@ -18,10 +18,10 @@
 * JavaScript;
 * CSS;
 * БЭМ;
-* BEMJSON.
+* [BEMJSON](http://ru.bem.info/libs/bem-core/2.1.0/bemjson/bemjson).
 
 
-**В документе не описаны** настройка среды разработки и процедуры компиляции шаблонов.
+**В документе не описаны** настройка среды разработки и процедуры компиляции шаблонов, синтаксис BEM-XJST-шаблонизаторов, синтаксис BEMJSON.
 
 <a name="bemhtml"></a>
 
@@ -38,8 +38,7 @@
 
 Подробнее об особенностях архитектуры BEMHTML читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_arch) документа по [шаблонизации данных в bem-core](http://ru.bem.info/libs/bem-core/2.1.0/template/template).
 
-
-<a name="uts"></a>
+<a name="uts"></a>
 ####Поддержка BEM-XJST-синтаксиса
 BEMHTML – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMHTML использует **BEM-XJST-синтаксис** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
 * [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.1.0/template/template#bem_area);
@@ -607,7 +606,7 @@ block('b4').mix()([ { block: 'b1' } ])</code></pre>
 )</code></pre>
     </td>
     <td><pre><code>&lt;input class="input"
-    disabled="disabled"/&gt;</code></pre></td>
+    disabled="disabled"/&gt;</code></pre></td>
 </tr>
 
 <tr>
