@@ -30,9 +30,9 @@
 <a name="arch"></a>
 ####Архитектура шаблонизатора
 
-Для обработки BEMHTML-шаблонов, используется модуль [bem-xjst](https://github.com/bem/bem-xjst), расширенный логикой из базового шаблона BEMHTML – [i-bem.bemhtml](https://github.com/bem/bem-core/blob/v1/common.blocks/i-bem/i-bem.bemhtml).
+Для обработки BEMHTML-шаблонов используется модуль [bem-xjst](https://github.com/bem/bem-xjst), расширенный логикой из базового шаблона BEMHTML – [i-bem.bemhtml](https://github.com/bem/bem-core/blob/v1/common.blocks/i-bem/i-bem.bemhtml).
 
-Специфическая для BEMHTML логика, при этом, реализована на уровне базового шаблона `i-bem.bemhtml`. Базовй шаблон определяет:
+Специфическая для BEMHTML логика при этом реализована на уровне базового шаблона `i-bem.bemhtml`. Базовый шаблон определяет:
 * набор и порядок вызова [стандартных мод](#standardmoda);
 * доступные [поля контекста](#context_field)
 
