@@ -40,16 +40,16 @@
 * набор и порядок вызова стандартных мод;
 * доступные поля контекста.
 
-Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_arch) документа по [шаблонизации данных в bem-core](http://ru.bem.info/libs/bem-core/2.1.0/template/template).
+Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](./common.docs/templating/template.ru.md#uts_arch) документа по [шаблонизации данных в bem-core](./common.docs/templating/template.ru.md).
 
 
 <a name="uts"></a>
 ####Поддержка BEM-XJST-шаблонизации
-BEMTREE – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.1.0/template/template#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
-* [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.1.0/template/template#bem_area);
-* [декларативные шаблоны](http://ru.bem.info/libs/bem-core/2.1.0/template/template#decl_templatе);
-* [язык описания и исполнения шаблонов — JavaScript](http://ru.bem.info/libs/bem-core/2.1.0/template/template#language);
-* [ограничения на уровне соглашений](http://ru.bem.info/libs/bem-core/2.1.0/template/template#restrictions).
+BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/template.ru.md#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
+* [привязка к БЭМ-предметной области](./common.docs/templating/template.ru.md#bem_area);
+* [декларативные шаблоны](./common.docs/templating/template.ru.md#decl_templatе);
+* [язык описания и исполнения шаблонов — JavaScript](./common.docs/templating/template.ru.md#language);
+* [ограничения на уровне соглашений](./common.docs/templating/template.ru.md#restrictions).
 
 
 <a name="basic"></a>
@@ -152,9 +152,9 @@ block('header').content([
 Понятия **шаблона, моды и контекста** являются базовыми для BEM-XJST и полностью применимы к BEMTREE.
 
 Вы можете ознакомиться с подробной информацией о них в соответствуюших разделах документации по шаблонизации в bem-core:
-* [Шаблон](http://ru.bem.info/libs/bem-core/2.1.0/template/template#template_ingeneral);
-* [Мода](http://ru.bem.info/libs/bem-core/2.1.0/template/template#moda);
-* [Контекст](http://ru.bem.info/libs/bem-core/2.1.0/template/template#context).
+* [Шаблон](./common.docs/templating/template.ru.md#template_ingeneral);
+* [Мода](./common.docs/templating/template.ru.md#moda);
+* [Контекст](./common.docs/templating/template.ru.md#context).
 
 
 
@@ -363,13 +363,13 @@ applyCtx({
 
 **См. также**:
 
-  * [Контекст](http://ru.bem.info/libs/bem-core/2.1.0/template/template#context)
+  * [Контекст](./common.docs/templating/template.ru.md#context)
   
 
 <a name="contextdependent"></a>
 
 #### Контекстно-зависимые поля
-Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](http://ru.bem.info/libs/bem-core/2.1.0/template/template#contextdependent).
+Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](./common.docs/templating/template.ru.md#contextdependent).
 
 
 <a name="context_independent"></a>
@@ -378,7 +378,7 @@ applyCtx({
 
 Все контекстно-независимые поля сгруппированы в объекте `this._` и представляют собой вспомогательные функции, используемые при работе шаблонизатора. Автор шаблонов также может пользоваться этими функциями как в теле шаблонов, так и в предикатах.
 
-BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](http://ru.bem.info/libs/bem-core/2.1.0/template/template#context_independent) только одним методом – `this._.doAsync`.
+BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](./common.docs/templating/template.ru.md#context_independent) только одним методом – `this._.doAsync`.
 
 <table>
 <tr>
@@ -705,4 +705,7 @@ block('input')(
   ]
 ))
 ```
+
+##### Послесловие
+При создании BEMTREE-шаблонов можно использовать те же приемы, что и в BEMHTML. Если вы встретили интересное решение в BEMHTML-шаблоне – не стесняйтесь экспериментировать. Скорее всего, это решение может быть применено и для BEMTREE.
 
