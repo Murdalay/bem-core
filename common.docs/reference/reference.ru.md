@@ -18,7 +18,7 @@
 * JavaScript;
 * CSS;
 * БЭМ;
-* [BEMJSON](http://ru.bem.info/libs/bem-core/2.1.0/bemjson/bemjson).
+* [BEMJSON](../bemjson/bemjson.ru.md).
 
 
 **В документе не описаны** настройка среды разработки и процедуры компиляции шаблонов, синтаксис BEM-XJST-шаблонизаторов, синтаксис BEMJSON.
