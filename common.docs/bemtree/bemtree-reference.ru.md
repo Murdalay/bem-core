@@ -18,8 +18,8 @@
 * HTML;
 * JavaScript;
 * CSS;
-* [BEMHTML](../reference/reference.ru.md);
-* [BEMJSON](../bemjson/bemjson.ru.md);
+* [BEMHTML](./common.docs/reference/reference.ru.md);
+* [BEMJSON](./common.docs/bemjson/bemjson.ru.md);
 * БЭМ.
 
 
@@ -40,16 +40,16 @@
 * набор и порядок вызова стандартных мод;
 * доступные поля контекста.
 
-Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](../templating/template.ru.md#uts_arch) документа по [шаблонизации данных в bem-core](../templating/template.ru.md).
+Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](./common.docs/templating/template.ru.md#uts_arch) документа по [шаблонизации данных в bem-core](./common.docs/templating/template.ru.md).
 
 
 <a name="uts"></a>
 ####Поддержка BEM-XJST-шаблонизации
-BEMTREE – [BEM-XJST-шаблонизатор](../templating/template.ru.md#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
-* [привязка к БЭМ-предметной области](../templating/template.ru.md#bem_area);
-* [декларативные шаблоны](../templating/template.ru.md#decl_templatе);
-* [язык описания и исполнения шаблонов — JavaScript](../templating/template.ru.md#language);
-* [ограничения на уровне соглашений](../templating/template.ru.md#restrictions).
+BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/template.ru.md#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
+* [привязка к БЭМ-предметной области](./common.docs/templating/template.ru.md#bem_area);
+* [декларативные шаблоны](./common.docs/templating/template.ru.md#decl_templatе);
+* [язык описания и исполнения шаблонов — JavaScript](./common.docs/templating/template.ru.md#language);
+* [ограничения на уровне соглашений](./common.docs/templating/template.ru.md#restrictions).
 
 
 <a name="basic"></a>
@@ -134,12 +134,7 @@ block('page').content([{ block: 'header' }, { block: 'main' }, ...])
 В ходе обработки шаблона, шаблонизатор рекурсивно вызовет BEMTREE-шаблоны, на которые тот ссылался. Например:
 
 ```js
-block('header').content([
-	{ block: 'logo' }, 
-	{ block: 'menu', 
-		content: { elem: 'item' } 
-	}
-])
+block('header').content([{ block: 'logo' }, { block: 'menu', content: { elem: 'item' }}])
 ```
 
 Таким образом поэлементно выстраивается БЭМ-дерево всего документа.
@@ -152,9 +147,9 @@ block('header').content([
 Понятия **шаблона, моды и контекста** являются базовыми для BEM-XJST и полностью применимы к BEMTREE.
 
 Вы можете ознакомиться с подробной информацией о них в соответствуюших разделах документации по шаблонизации в bem-core:
-* [Шаблон](../templating/template.ru.md#template_ingeneral);
-* [Мода](../templating/template.ru.md#moda);
-* [Контекст](../templating/template.ru.md#context).
+* [Шаблон](./common.docs/templating/template.ru.md#template_ingeneral);
+* [Мода](./common.docs/templating/template.ru.md#moda);
+* [Контекст](./common.docs/templating/template.ru.md#context).
 
 
 
@@ -334,7 +329,7 @@ applyCtx({
   block: 'b2'
 })</code></pre>
     </td>
-    <td>{ block: 'b1', content: { block: 'b2' } }
+    <td><pre><code>{ block: 'b1', content: { block: 'b2' } }</code></pre>
 </td>
 </tr>
 </table>
@@ -363,13 +358,13 @@ applyCtx({
 
 **См. также**:
 
-  * [Контекст](../templating/template.ru.md#context)
+  * [Контекст](./common.docs/templating/template.ru.md#context)
   
 
 <a name="contextdependent"></a>
 
 #### Контекстно-зависимые поля
-Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](../templating/template.ru.md#contextdependent).
+Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](./common.docs/templating/template.ru.md#contextdependent).
 
 
 <a name="context_independent"></a>
@@ -378,7 +373,7 @@ applyCtx({
 
 Все контекстно-независимые поля сгруппированы в объекте `this._` и представляют собой вспомогательные функции, используемые при работе шаблонизатора. Автор шаблонов также может пользоваться этими функциями как в теле шаблонов, так и в предикатах.
 
-BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](../templating/template.ru.md#context_independent) только одним методом – `this._.doAsync`.
+BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](./common.docs/templating/template.ru.md#context_independent) только одним методом – `this._.doAsync`.
 
 <table>
 <tr>
@@ -456,28 +451,40 @@ BEMTREE расширяет набор [контекстно-независимы
 ```js
   block('posts').match(!this.processed).def()( 
     function() {
-        var result = [],
-        ctx = this.ctx,
-        posts = this.ctx.data.posts;
 
-        posts.forEach(function(post, index){
-          var login = post.author,
-          username = ctx.data.users[login].name,
-          url = ctx.data.users[login].userpic;
-          
-          result[index] = { 
-            block: 'post',      
-            content: [{ block: 'userpic', content: url },
-                      { block: 'user', content: username },
-                      { elem: 'text', content: post.text }]   
-          }
-        }); 
+
     
-        return  local({ processed: true })(applyCtx({ block: 'posts', content: result }))
+        return  applyCtx({ processed: true }, { block: 'posts', content: result })
 
     })
 ```
+
+
+
+```js
+  block('posts').def()( 
+    function() {
+        var result = [],
+            ctx = this.ctx,
+            posts = this.ctx.data.posts;
+
+        posts.forEach(function(post){
+          var user = ctx.data.users[post.author];
+          
+          result.push({ 
+            block: 'post',      
+            content: [
+                      { block: 'userpic', content: user.userpic },
+                      { block: 'user', content: user.name },
+                      { elem: 'text', content: post.text }
+            ]    
+          })
+        }); 
     
+        return applyCtx({ block: 'posts', content: result })
+    })
+
+```
 
 <a name="inheritage"></a>
 
@@ -617,7 +624,7 @@ block('b-inner').def()
 BEMTREE-шаблон, выполняющий это преобразование:
 
 ```js
-block('box').match(!this.ctx._processed).content()(local({'ctx._processed':true})(applyCtx({
+block('box').match(!this.ctx._processed).content()(applyCtx({'ctx._processed':true}, {
     elem: 'left-top',
     content: {
         elem: 'right-top',
@@ -629,10 +636,10 @@ block('box').match(!this.ctx._processed).content()(local({'ctx._processed':true}
             }
         }
     }
-})))
+}))
 ```
 
-**NB:** Конструкция языка XJST `local` используется в примере для вызова тела шаблона в модифицированном контексте. А именно, с флагом `ctx._processed` в значении `true`.
+**NB:** Хеш с переменной `ctx._processed` в значении `true` передается методу `applyCtx` первым параметром, чтобы выполнить метод в модифицированном контексте.
 
 
 **См. также**:

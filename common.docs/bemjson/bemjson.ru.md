@@ -26,7 +26,7 @@
 
 ###Общие понятия
 
-
+###BEMJSON и шаблонизация в bem-core
 
 
 <a name="bemjson"></a>
