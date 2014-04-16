@@ -1111,12 +1111,12 @@ bem make desktop.bundles/index/index.bemtree
 ####Подключение 
 
 <a name="ymodule"></a>
-#####BEMHTML и BEMTREE как YModules
+#####BEMHTML как YModules
 
-Бандлы технологий BEMHTML и BEMTREE могут быть подключены с помощью модульной системы YModules. Чтобы подключить модуль, нужно воспользоваться асинхронным методом `modules.require`:
+Бандл технологии BEMHTML может быть подключены с помощью модульной системы YModules. Чтобы подключить модуль, нужно воспользоваться асинхронным методом `modules.require`:
 
 ```js
-modules.require(['BEMTREE', 'BEMHTML'],  function(BEMTREE, BEMHTML) {
+modules.require(['BEMHTML'],  function(BEMHTML) {
 	// user code
   });
 ```
@@ -1129,14 +1129,13 @@ modules.require(['BEMTREE', 'BEMHTML'],  function(BEMTREE, BEMHTML) {
 
   
 <a name="commonjs"></a>
-#####BEMHTML и BEMTREE как CommonJS
+#####BEMHTML как CommonJS
 
-Чтобы подключить бандлы технологий BEMHTML и BEMTREE как CommonJS-модули нужно воспользоваться стандартным методом NodeJS `require`. 
-При этом требуется явно указать путь до бандлов:
+Чтобы подключить бандл технологий BEMHTML как CommonJS-модуль нужно воспользоваться стандартным методом NodeJS `require`. 
+При этом требуется явно указать путь до бандла:
 
   ```js
-var	BEMTREE = require('./desktop.bundles/index/index.bemtree').BEMTREE,
-	BEMHTML = require('./desktop.bundles/index/index.bemhtml').BEMHTML;
+var	BEMHTML = require('./desktop.bundles/index/index.bemhtml').BEMHTML;
   ```
   
 В примере выше путь приведен относительно модуля, расположенного в корневом каталоге проекта.
@@ -1152,11 +1151,11 @@ var	BEMTREE = require('./desktop.bundles/index/index.bemtree').BEMTREE,
 
 
 <a name="fs"></a>
-#####Выполнение бандла BEMTREE в модифицированном контексте
+#####Подключение бандла BEMTREE
 
-При подключении рантайма BEMTREE в виде CommonJS-модуля в некоторых проектах возможно возникновение ошибки. Причина ее в том, что во время выполнения технологией BEMTREE в ее глобальном контексте отсутствует объект `Vow`, методы которого она использует .
+При подключении рантайма BEMTREE с помощью YModules или в виде CommonJS-модуля в некоторых проектах возможно возникновение ошибки. Причина ее в том, что во время выполнения технологией BEMTREE в ее глобальном контексте отсутствует объект `Vow`, методы которого она использует.
 
-Чтобы избежать ее возникновения, можно выполнить рантайм технологии BEMTREE в модифицированном контексте, содержащем нужные объекты. 
+В последующих версиях `bem-core` ошибка будет устранена. Пока же требуется выполнить рантайм технологии BEMTREE в модифицированном контексте, содержащем нужные объекты. 
 
 Для этого сначала нужно установить в проекте npm-пакет Vow:
 
@@ -1232,7 +1231,7 @@ BEMTREE.apply({ block: 'intitial' })
 ####Технологии
 * [BEMTREE](./common.docs/bemtree/bemtree-reference.ru.md/)
 * [BEMHTML](./common.docs/reference/reference.ru.md)
-* [Синтаксис BEMJSON](./common.docs/bemjson/bemjson.ru.md)
+* [BEMJSON](./common.docs/bemjson/bemjson.ru.md)
 
 ####Примеры
 * [Примеры и рецепты BEMTREE](./common.docs/bemtree/bemtree-reference.ru.md#examples)

@@ -40,12 +40,12 @@
 * набор и порядок вызова стандартных мод;
 * доступные поля контекста.
 
-Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](./common.docs/templating/template.ru.md#uts_arch) документа по [шаблонизации данных в bem-core](./common.docs/templating/template.ru.md).
+Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](./common.docs/templating/template.ru.md#bemx_arch) документа по [шаблонизации данных в bem-core](./common.docs/templating/template.ru.md).
 
 
 <a name="uts"></a>
 ####Поддержка BEM-XJST-шаблонизации
-BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/template.ru.md#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
+BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/template.ru.md#bemx_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
 * [привязка к БЭМ-предметной области](./common.docs/templating/template.ru.md#bem_area);
 * [декларативные шаблоны](./common.docs/templating/template.ru.md#decl_templatе);
 * [язык описания и исполнения шаблонов – JavaScript](./common.docs/templating/template.ru.md#language);
@@ -715,4 +715,14 @@ block('input')(
 
 ##### Послесловие
 При создании BEMTREE-шаблонов можно использовать те же приемы, что и в BEMHTML. Если вы встретили интересное решение в BEMHTML-шаблоне – не стесняйтесь экспериментировать. Скорее всего, это решение может быть применено и к BEMTREE.
+
+**См. также**:
+* [Мастер-класс «Динамический БЭМ-сайт на Node.js»](http://tech.yandex.ru/events/bemup/spb-bemup/talks/1413/)
+* [BEMTREE — генерируй дерево](http://tech.yandex.ru/events/bemup/yac-bemup/talks/1354/)
+* [Примеры и рецепты BEMHTML](./common.docs/reference/reference.ru.md#examples)
+* [BEMTREE](./common.docs/bemtree/bemtree-reference.ru.md/)
+* [BEMHTML](./common.docs/reference/reference.ru.md)
+* [BEMJSON](./common.docs/bemjson/bemjson.ru.md)
+
+
 
