@@ -1,0 +1,16 @@
+{
+    "title": "Референс по BEMTREE",
+    "createDate": "17-04-2014",
+    "editDate": "",
+    "summary": "Референс по BEMTREE",
+    "thumbnail": "",
+    "authors": ["ivanichenko-sergey"],
+    "tags": ["BEMTREE"],
+    "categories": [
+        {"name": "bem-core/1.0.0/BEMTREE", "url": "bem-core/1.0.0/bemtree", "type": "libs"},
+        {"name": "Шаблонизаторы/BEMTREE", "url": "templating-engines/bemtree", "order": "30/10","type": "tools"}
+    ],
+    "translators": [],
+    "url": "/common.docs/bemtree/",
+    "type": ["libs", "tools"]
+}

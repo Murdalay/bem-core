@@ -1,0 +1,16 @@
+{
+    "title": "Справочное руководство по BEMJSON",
+    "createDate": "17-04-2014",
+    "editDate": "",
+    "summary": "Cправочное руководство по формату представления БЭМ-дерева BEMJSON.",
+    "thumbnail": "",
+    "authors": ["maslinsky-kirill", "ivanichenko-sergey"],
+    "tags": ["BEMJSON"],
+    "categories": [
+        {"name": "bem-core/1.0.0/BEMJSON", "url": "bem-core/1.0.0/bemjson", "type": "libs"},
+        {"name": "Шаблонизаторы/BEMJSON", "url": "templating-engines/bemjson", "order": "30/10","type": "tools"}
+    ],
+    "translators": [],
+    "url": "/common.docs/bemjson/",
+    "type": ["libs", "tools"]
+}
