@@ -158,7 +158,7 @@ block('header').content([{ block: 'logo' }, { block: 'menu', content: { elem: 'i
 
 #### Синтаксис шаблонов
 
-BEMTREE-шаблоны создаются с помощью [BEM-XJST-синтаксиса шаблонов](#unity). 
+BEMTREE-шаблоны создаются с помощью [BEM-XJST-синтаксиса шаблонов]((../templating/templates.ru.md#unity). 
 На практике это означает, что в BEMTREE-шаблонах могут быть использованы все те же синтаксические конструкции, которые доступны в BEMHTML-шаблонах.
 
 Все синтаксические отличия от BEMHTML заключается в доступных наборах полей контекста и стандартных мод (включая хелперы для их записи).
@@ -241,7 +241,7 @@ BEMTREE-шаблоны создаются с помощью [BEM-XJST-синта
 
 Вызов шаблонов по пустой моде (конструкция `apply('')` в теле шаблона) необходим, если требуется отклониться
 от однозначного соответствия «входная БЭМ-сущность — выходной BEMJSON-элемент» и сгенерировать более одного элемента на одну входную сущность. В частности, такой вызов осуществляется автоматически при использовании
-[конструкции applyCtx](#applyctx).
+[конструкции applyCtx](../templating/templates.ru.md#applyctx).
 
 **См. также**:
 
@@ -338,7 +338,7 @@ applyCtx({
 **См. также**:
 
 * [Наследование](#inheritage)
-* [Добавление БЭМ-сущностей для задач верстки](#additionbem)
+* [Добавление БЭМ-сущностей к БЭМ-дереву](#additionbem)
 
 
 <a name="context_field"></a>
@@ -492,7 +492,7 @@ BEMTREE расширяет набор [контекстно-независимы
 
 ##### Задача
 
-На разных [уровнях переопределения](http://bem.github.com/bem-method/pages/beginning/beginning.ru.html#Urovnipereopredeleniy)
+На разных [уровнях переопределения](http://ru.bem.info/method/filesystem/)
 определены два различных шаблона на одну и ту же БЭМ-сущность (`block b1`). Каждый из шаблонов определяет своё
 содержимое по моде `content`.
 
@@ -539,7 +539,7 @@ block('b1').content()([
 
 **См. также**:
 
-  * [Конструкция applyNext](#applynext)
+  * [Конструкция applyNext](../templating/templates.ru.md#applynext)
 
 
 
@@ -577,7 +577,7 @@ block('b-inner').def()
 
 **См. также**:
 
-  * [Конструкция applyCtx](#applyctx)
+  * [Конструкция applyCtx](../templating/templates.ru.md#applyctx)
 
 <a name="additionbem"></a>
 
@@ -644,10 +644,10 @@ block('box').match(!this.ctx._processed).content()(applyCtx({'ctx._processed':tr
 
 **См. также**:
 
-  * [Конструкция apply](#apply)
-  * [Конструкция applyNext](#applynext)
-  * [Конструкция applyCtx](#applyctx)
-  * [Конструкция local](#local)
+  * [Конструкция apply](../templating/templates.ru.md#apply)
+  * [Конструкция applyNext](../templating/templates.ru.md#applynext)
+  * [Конструкция applyCtx](../templating/templates.ru.md#applyctx)
+  * [Конструкция local](../templating/templates.ru.md#local)
 
 
 <a name="check_predicate"></a>
