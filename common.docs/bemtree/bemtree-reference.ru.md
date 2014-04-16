@@ -451,19 +451,6 @@ BEMTREE расширяет набор [контекстно-независимы
 ```js
   block('posts').match(!this.processed).def()( 
     function() {
-
-
-    
-        return  applyCtx({ processed: true }, { block: 'posts', content: result })
-
-    })
-```
-
-
-
-```js
-  block('posts').def()( 
-    function() {
         var result = [],
             ctx = this.ctx,
             posts = this.ctx.data.posts;
@@ -481,10 +468,11 @@ BEMTREE расширяет набор [контекстно-независимы
           })
         }); 
     
-        return applyCtx({ block: 'posts', content: result })
+        return  applyCtx({ processed: true }, { block: 'posts', content: result })
     })
-
 ```
+
+
 
 <a name="inheritage"></a>
 
