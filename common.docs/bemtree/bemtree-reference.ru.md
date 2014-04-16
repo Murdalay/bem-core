@@ -708,7 +708,7 @@ block('input')(
 * [Мастер-класс «Динамический БЭМ-сайт на Node.js»](http://tech.yandex.ru/events/bemup/spb-bemup/talks/1413/)
 * [BEMTREE — генерируй дерево](http://tech.yandex.ru/events/bemup/yac-bemup/talks/1354/)
 * [Примеры и рецепты BEMHTML](../reference/reference.ru.md#examples)
-* [BEMTREE](../bemtree/bemtree-reference.ru.md/)
+* [Шаблонизация данных в bem-core](../templating/template.ru.md/)
 * [BEMHTML](../reference/reference.ru.md)
 * [BEMJSON](../bemjson/bemjson.ru.md)
 

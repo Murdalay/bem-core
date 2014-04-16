@@ -1170,3 +1170,14 @@ block('input')(
   ]
 ))
 ```
+
+
+<a name="links"></a>
+###Смотрите также
+* [Примеры и рецепты BEMTREE](../bemtree/bemtree-reference.ru.md#examples)
+* [Мастер-класс «Динамический БЭМ-сайт на Node.js»](http://tech.yandex.ru/events/bemup/spb-bemup/talks/1413/)
+* [Шаблонизация данных в bem-core](../templating/template.ru.md/)
+####В сообществе
+* [BEMTREE](../bemtree/bemtree-reference.ru.md/)
+* [BEMJSON](../bemjson/bemjson.ru.md)
+
