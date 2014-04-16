@@ -48,7 +48,7 @@
 BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/template.ru.md#uts_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
 * [привязка к БЭМ-предметной области](./common.docs/templating/template.ru.md#bem_area);
 * [декларативные шаблоны](./common.docs/templating/template.ru.md#decl_templatе);
-* [язык описания и исполнения шаблонов — JavaScript](./common.docs/templating/template.ru.md#language);
+* [язык описания и исполнения шаблонов – JavaScript](./common.docs/templating/template.ru.md#language);
 * [ограничения на уровне соглашений](./common.docs/templating/template.ru.md#restrictions).
 
 
@@ -61,7 +61,7 @@ BEMTREE – [BEM-XJST-шаблонизатор](./common.docs/templating/templat
 
 BEMTREE – шаблонизатор рассчитанный на использование в связке с шаблонизатором BEMHTML.
 
-BEMHTML — поэлементно преобразует входное БЭМ-дерево в выходной HTML-документ. 
+BEMHTML – поэлементно преобразует входное БЭМ-дерево в выходной HTML-документ. 
 
 Поэтому структура входного БЭМ-дерева должна быть максимально ориентирована на **представление** (view), чтобы при генерации HTML-дерева не требовалось изменять набор и порядок блоков и элементов. 
 
