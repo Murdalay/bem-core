@@ -137,7 +137,7 @@ HTML-дерева не требовалось изменять набор и п�
 **См. также**:
 
 * [Поля контекста](#context_field)
-* [Достраивание БЭМ-сущностей по контексту](../templating/templates.ru.md#extensionbem)
+* [Достраивание БЭМ-сущностей по контексту](../templating/template.ru.md#extensionbem)
 
 
 
@@ -208,7 +208,7 @@ HTML-дерева не требовалось изменять набор и п�
 
 Вызов шаблонов по пустой моде (конструкция `apply('')` в теле шаблона) необходим, если требуется отклониться
 от однозначного соответствия «входная БЭМ-сущность — выходной HTML-элемент» и сгенерировать более одного элемента на одну входную сущность. В частности, такой вызов осуществляется автоматически при использовании
-[конструкции applyCtx](../templating/templates.ru.md#applyctx).
+[конструкции applyCtx](../templating/template.ru.md#applyctx).
 
 **См. также**:
 
@@ -853,7 +853,7 @@ block('b-link').tag()(this.ctx.url ? 'a' : 'span')
 
 **См. также**:
 
-  * [Синтаксис шаблонов](../templating/templates.ru.md#template)
+  * [Синтаксис шаблонов](../templating/template.ru.md#template)
 
 <a name="inheritage"></a>
 
@@ -908,7 +908,7 @@ block('b1').content()([
 
 **См. также**:
 
-  * [Конструкция applyNext](../templating/templates.ru.md#applynext)
+  * [Конструкция applyNext](../templating/template.ru.md#applynext)
 
 
 <a name="parentblock"></a>
@@ -980,7 +980,7 @@ block('b-inner').def()
 
 **См. также**:
 
-  * [Конструкция applyCtx](../templating/templates.ru.md#applyctx)
+  * [Конструкция applyCtx](../templating/template.ru.md#applyctx)
 
 <a name="additionbem"></a>
 
@@ -1050,9 +1050,9 @@ block('box').match(!this.ctx._processed).content()(applyCtx({'ctx._processed':tr
 
 **См. также**:
 
-  * [Конструкция apply](../templating/templates.ru.md#apply)
-  * [Конструкция applyNext](../templating/templates.ru.md#applynext)
-  * [Конструкция applyCtx](../templating/templates.ru.md#applyctx)
+  * [Конструкция apply](../templating/template.ru.md#apply)
+  * [Конструкция applyNext](../templating/template.ru.md#applynext)
+  * [Конструкция applyCtx](../templating/template.ru.md#applyctx)
 
 <a name="use_bem"></a>
 
@@ -1099,7 +1099,7 @@ block('menu')(
 **См. также**:
 
   * [Мода content](#content)
-  * [Конструкция applyNext](../templating/templates.ru.md#applynext)
+  * [Конструкция applyNext](../templating/template.ru.md#applynext)
 
 <a name="check_predicate"></a>
 
