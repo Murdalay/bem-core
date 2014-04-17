@@ -711,6 +711,3 @@ block('input')(
 * [Шаблонизация данных в bem-core](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates/)
 * [BEMHTML](http://ru.bem.info/libs/bem-core/2.2.0/templates/reference)
 * [BEMJSON](http://ru.bem.info/libs/bem-core/2.2.0/templates/bemjson)
-
-
-
