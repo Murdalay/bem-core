@@ -18,8 +18,8 @@
 * HTML;
 * JavaScript;
 * CSS;
-* [BEMHTML](http://ru.bem.info/libs/bem-core/2.0.0/templates/reference);
-* [BEMJSON](http://ru.bem.info/libs/bem-core/2.0.0/templates/bemjson);
+* [BEMHTML](http://ru.bem.info/libs/bem-core/2.2.0/templates/reference);
+* [BEMJSON](http://ru.bem.info/libs/bem-core/2.2.0/templates/bemjson);
 * БЭМ.
 
 
@@ -40,16 +40,16 @@
 * набор и порядок вызова стандартных мод;
 * доступные поля контекста.
 
-Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#bemx_arch) документа по [шаблонизации данных в bem-core](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates).
+Подробнее об особенностях архитектуры BEMTREE читайте в разделе [архитектура шаблонизаторов BEMHTML и BEMTREE](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#bemx_arch) документа по [шаблонизации данных в bem-core](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates).
 
 
 <a name="uts"></a>
 ####Поддержка BEM-XJST-шаблонизации
-BEMTREE – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#bemx_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
-* [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#bem_area);
-* [декларативные шаблоны](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#decl_templatе);
-* [язык описания и исполнения шаблонов – JavaScript](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#language);
-* [ограничения на уровне соглашений](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#restrictions).
+BEMTREE – [BEM-XJST-шаблонизатор](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#bemx_intro). Иначе говоря, BEMTREE использует **синтаксис-BEM-XJST** и сохраняет все особенности BEM-XJST-шаблонизаторов, такие как:
+* [привязка к БЭМ-предметной области](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#bem_area);
+* [декларативные шаблоны](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#decl_templatе);
+* [язык описания и исполнения шаблонов – JavaScript](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#language);
+* [ограничения на уровне соглашений](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#restrictions).
 
 
 <a name="basic"></a>
@@ -147,9 +147,9 @@ block('header').content([{ block: 'logo' }, { block: 'menu', content: { elem: 'i
 Понятия **шаблона, моды и контекста** являются базовыми для BEM-XJST и полностью применимы к BEMTREE.
 
 Вы можете ознакомиться с подробной информацией о них в соответствуюших разделах документации по шаблонизации в bem-core:
-* [Шаблон](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#template_ingeneral);
-* [Мода](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#moda);
-* [Контекст](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#context).
+* [Шаблон](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#template_ingeneral);
+* [Мода](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#moda);
+* [Контекст](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#context).
 
 
 
@@ -158,7 +158,7 @@ block('header').content([{ block: 'logo' }, { block: 'menu', content: { elem: 'i
 
 #### Синтаксис шаблонов
 
-BEMTREE-шаблоны создаются с помощью [BEM-XJST-синтаксиса шаблонов]((http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#unity). 
+BEMTREE-шаблоны создаются с помощью [BEM-XJST-синтаксиса шаблонов]((http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#unity). 
 На практике это означает, что в BEMTREE-шаблонах могут быть использованы все те же синтаксические конструкции, которые доступны в BEMHTML-шаблонах.
 
 Все синтаксические отличия от BEMHTML заключается в доступных наборах полей контекста и стандартных мод (включая хелперы для их записи).
@@ -241,7 +241,7 @@ BEMTREE-шаблоны создаются с помощью [BEM-XJST-синта
 
 Вызов шаблонов по пустой моде (конструкция `apply('')` в теле шаблона) необходим, если требуется отклониться
 от однозначного соответствия «входная БЭМ-сущность — выходной BEMJSON-элемент» и сгенерировать более одного элемента на одну входную сущность. В частности, такой вызов осуществляется автоматически при использовании
-[конструкции applyCtx](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#applyctx).
+[конструкции applyCtx](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#applyctx).
 
 **См. также**:
 
@@ -358,13 +358,13 @@ applyCtx({
 
 **См. также**:
 
-  * [Контекст](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#context)
+  * [Контекст](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#context)
   
 
 <a name="contextdependent"></a>
 
 #### Контекстно-зависимые поля
-Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#contextdependent).
+Базовый шаблон технологии BEMTREE не добавляет никаких контекстно-зависимых полей помимо,  [общих для BEM-XJST](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#contextdependent).
 
 
 <a name="context_independent"></a>
@@ -373,7 +373,7 @@ applyCtx({
 
 Все контекстно-независимые поля сгруппированы в объекте `this._` и представляют собой вспомогательные функции, используемые при работе шаблонизатора. Автор шаблонов также может пользоваться этими функциями как в теле шаблонов, так и в предикатах.
 
-BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#context_independent) только одним методом – `this._.doAsync`.
+BEMTREE расширяет набор [контекстно-независимых полей BEM-XJST](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#context_independent) только одним методом – `this._.doAsync`.
 
 <table>
 <tr>
@@ -527,7 +527,7 @@ block('b1').content()([
 
 **См. также**:
 
-  * [Конструкция applyNext](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#applynext)
+  * [Конструкция applyNext](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#applynext)
 
 
 
@@ -565,7 +565,7 @@ block('b-inner').def()
 
 **См. также**:
 
-  * [Конструкция applyCtx](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#applyctx)
+  * [Конструкция applyCtx](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#applyctx)
 
 <a name="additionbem"></a>
 
@@ -632,10 +632,10 @@ block('box').match(!this.ctx._processed).content()(applyCtx({'ctx._processed':tr
 
 **См. также**:
 
-  * [Конструкция apply](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#apply)
-  * [Конструкция applyNext](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#applynext)
-  * [Конструкция applyCtx](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#applyctx)
-  * [Конструкция local](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates#local)
+  * [Конструкция apply](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#apply)
+  * [Конструкция applyNext](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#applynext)
+  * [Конструкция applyCtx](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#applyctx)
+  * [Конструкция local](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates#local)
 
 
 <a name="check_predicate"></a>
@@ -707,10 +707,10 @@ block('input')(
 **См. также**:
 * [Мастер-класс «Динамический БЭМ-сайт на Node.js»](http://tech.yandex.ru/events/bemup/spb-bemup/talks/1413/)
 * [BEMTREE — генерируй дерево](http://tech.yandex.ru/events/bemup/yac-bemup/talks/1354/)
-* [Примеры и рецепты BEMHTML](http://ru.bem.info/libs/bem-core/2.0.0/templates/reference#examples)
-* [Шаблонизация данных в bem-core](http://ru.bem.info/libs/bem-core/2.0.0/templates/templates/)
-* [BEMHTML](http://ru.bem.info/libs/bem-core/2.0.0/templates/reference)
-* [BEMJSON](http://ru.bem.info/libs/bem-core/2.0.0/templates/bemjson)
+* [Примеры и рецепты BEMHTML](http://ru.bem.info/libs/bem-core/2.2.0/templates/reference#examples)
+* [Шаблонизация данных в bem-core](http://ru.bem.info/libs/bem-core/2.2.0/templates/templates/)
+* [BEMHTML](http://ru.bem.info/libs/bem-core/2.2.0/templates/reference)
+* [BEMJSON](http://ru.bem.info/libs/bem-core/2.2.0/templates/bemjson)
 
 
 
